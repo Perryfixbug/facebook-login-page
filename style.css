@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --accent-color: #0866FF;
+    --secondary-accent-color: #42B72A;
+    --bg-color: #F2F4F7;
+}
+
+body{
+    background-color: #F2F4F7;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%;
+    color: #333;
+    user-select: none;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px auto;
+}
+
+.hero{
+    width: 38%;
+    overflow: wrap;
+    height: 250px;
+    margin-right: 32px;
+}
+
+.hero img{
+    width: 320px;
+    height: auto;
+}
+.hero p{
+    font-size: 1.7rem;
+    padding: 0 30px;
+    font-weight: 500;
+    font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+}
+.login-site{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    width: 400px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: -2px -2px 5px #d3d3d3, 2px 2px 5px #d3d3d3;
+    position: relative;
+}
+
+
+.subtitle{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+    bottom: -50px;
+}
+
+.subtitle a{
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+    margin-right: 5px;
+}
+
+.subtitle a:hover{
+    text-decoration: underline;
+}
+
+.subtitle p{
+    display: inline-block;
+}
+
+
+.input{
+    font-size: 1.1rem;
+    margin: 16px 16px 0 16px;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    border: 1px solid #c9c9c9;
+    border-radius: 10px;
+    width: calc(100% - 16px*2);
+}
+
+.input:active{
+    border: 2px solid #0866FF
+}
+
+::placeholder{
+    color: rgb(176, 176, 176);
+}
+
+.input__login{
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 700;
+}
+
+.input__createnew{
+    background-color: var(--secondary-accent-color);
+    color: white;
+    font-weight: 700;
+    margin-bottom: 24px;
+    width: 50%;
+}
+.line{
+    height: 1.5px;
+    width: calc(100% - 16px * 2);
+    background-color: rgb(201, 201, 201, 0.5);
+}
+
+.forgot{
+    font-size: 1rem;
+    text-decoration: none;
+    margin: 18px;
+    color: var(--accent-color);
+}
