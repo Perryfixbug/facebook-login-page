@@ -1,13 +1,8 @@
-// import React from 'react' // nạp thư viện react
-// import ReactDOM from 'react-dom/client' // nạp thư viện react-dom
+const { useState } = React;
 
-//destructuring useState
-const { useState } = React
-
-//Tạo input site tái sử dụng cho nhanh
-function Input({ type, className, placeholder, text, value, style, onChange, onFocus, onBlur }) {
+function Input({ type, className, placeholder, text, value, style, onChange }) {
     let isButton = false;
-    if (type == "submit") isButton = true;
+    if (type === "submit") isButton = true;
     return (
         <input
             type={type}
@@ -16,22 +11,21 @@ function Input({ type, className, placeholder, text, value, style, onChange, onF
             value={isButton ? text : value}
             onChange={onChange}
         />
-    )
+    );
 }
 
-// Tạo component App
 function App() {
-    const [valueUser, setValueUser] = useState('')
-    const [valuePass, setValuePass] = useState('')
-    const [message, setMessage] = useState('')
+    const [valueUser, setValueUser] = useState('');
+    const [valuePass, setValuePass] = useState('');
+    const [message, setMessage] = useState('');
 
     const handleChange = (e) => {
-        if (e.target.type == "text") {
-            setValueUser(e.target.value)
-        } else if (e.target.type == "password") {
-            setValuePass(e.target.value)
+        if (e.target.type === "text") {
+            setValueUser(e.target.value);
+        } else if (e.target.type === "password") {
+            setValuePass(e.target.value);
         }
-    }
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -48,8 +42,7 @@ function App() {
 
         const data = await response.json();
         setMessage(data.message);
-    }
-
+    };
 
     return (
         <form onSubmit={handleSubmit}>
@@ -82,7 +75,7 @@ function App() {
                     <a href="#" className="forgot">Forgotten password</a>
                     <div className="line"></div>
                     <Input
-                        type="submit"
+                        type="button"
                         className="input input__createnew"
                         text="Create new account"
                     />
@@ -92,13 +85,11 @@ function App() {
                     </div>
                     {message && <p>{message}</p>}
                 </div>
-
             </div>
         </form>
-
-    )
+    );
 }
 
 // Render component App vào #root element
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<App />)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
